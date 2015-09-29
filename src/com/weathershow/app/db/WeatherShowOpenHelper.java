@@ -6,6 +6,26 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class WeatherShowOpenHelper extends SQLiteOpenHelper{
+	public static final String CREATE_PROVINCE="create table Province("
+			+ "id integer primary key autoincrement,"
+			+ "province_name text,"
+			+ "province_code text)";
+	public static final String CREATE_CITY="create table City("
+			+ "id integer primary key autoincrement,"
+			+ "city_name text,"
+			+ "city_code text,"
+			+ "province_id integer)";
+	public static final String CREATE_COUNTRY="create table Country("
+			+ "id integer primary key autoincrement,"
+			+ "country_name text,"
+			+ "country_code text,"
+			+ "city_id integer)";
+	
+	public WeatherShowOpenHelper(Context context, String name,
+			CursorFactory factory, int version) {
+		super(context, name, factory, version);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -21,25 +41,8 @@ public class WeatherShowOpenHelper extends SQLiteOpenHelper{
 		// TODO Auto-generated method stub
 		
 	}
-	public static final String CREATE_PROVINCE="create table Province(id integer primary"
-			+ "key autoincrement,"
-			+ "province_name text,"
-			+ "province_code text)";
-	public static final String CREATE_CITY="create table City("
-			+ "id integer primary key autoincrement,"
-			+ "city_name text,"
-			+ "city_code text,"
-			+ "province_id integer)";
-	public static final String CREATE_COUNTRY="create table Country("
-			+ "id integer primary key autoincrement,"
-			+ "country_name text,"
-			+ "country_code text,"
-			+ "city_id integer)";
-	public WeatherShowOpenHelper(Context context, String name,
-			CursorFactory factory, int version) {
-		super(context, name, factory, version);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
 	
 
 }
