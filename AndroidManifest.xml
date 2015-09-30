@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.weathershow.app.activity.WeatherActivity"></activity>
+        <service android:name="com.weathershow.app.service.AutoUpdateService"></service>
+        <receiver android:name="com.weathershow.app.receiver.AutoUpdateReceiver"></receiver>
+            
     </application>
 
 </manifest>
